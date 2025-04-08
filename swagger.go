@@ -38,6 +38,8 @@ func New(config ...Config) fiber.Handler {
 		fs     = static.New("/", static.Config{FS: swaggerFiles.FS})
 	)
 
+	fmt.Println(fs, swaggerFiles.FS)
+
 	return func(c fiber.Ctx) error {
 		// Set prefix
 		once.Do(
