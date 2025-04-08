@@ -11,7 +11,6 @@ import (
 	"github.com/gofiber/fiber/v3/middleware/static"
 	"github.com/gofiber/utils/v2"
 
-	//"github.com/gofiber/fiber/v3/utils"
 	swaggerFiles "github.com/swaggo/files/v2"
 	"github.com/swaggo/swag"
 )
@@ -37,8 +36,6 @@ func New(config ...Config) fiber.Handler {
 		once   sync.Once
 		fs     = static.New("/", static.Config{FS: swaggerFiles.FS})
 	)
-
-	fmt.Println(fs, swaggerFiles.FS)
 
 	return func(c fiber.Ctx) error {
 		// Set prefix
